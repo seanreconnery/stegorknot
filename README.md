@@ -4,7 +4,9 @@ REST API to check a JPG for indications of PixelKnot, a common mobile steganogra
 
 Responses Back from API will be either an "error" message or an indicator of yes/no regarding PixelKnot.
 
+
 If an image contains embedding by PixelKnot, you'll receive a response of:  {'PixelKnot' : 'YES'}
+
 If the image does NOT contain any indicators of PixelKnot, you'll receive a response of:  {'PixelKnot' : 'NO'}
 
 
