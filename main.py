@@ -28,8 +28,8 @@ def upload_file():
 		imgfile = app.config['UPLOAD_FOLDER'] + "/" + filename
 		# open the image, read in a
 		with open(imgfile, 'rb') as f:
-			# read in part of the image
-			s = f.read(255)
+			# read in the image
+			s = f.read()
 		# PIXEL KNOT byte string
 		found = s.find(b'\xFF\xC0\x00\x11\x08')
 		if found == -1:
