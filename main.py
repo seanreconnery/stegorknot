@@ -9,6 +9,18 @@ ALLOWED_EXTENSIONS = set(['jpg', 'jpeg'])
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route('/')
+def index():
+	# build HTML response for anyone not using the API
+	html = "<html><body valign='middle'><center>"
+	html = html + "<div width='40%'></div>"
+	html = html + "<div style='align:center;width:20%;padding:25px;margin:50px;border-radius:20px;background:#e8e8e8;'>"
+	html = html + "<center><h1>StegOrKnot</h1>"
+	html = html + "<h4>This is not the endpoint you're looking for...</h4><br>"
+	html = html + "<br><b><em>Resource Endpoint</em>:</b>  /api/scan<br><br></center>"
+	html = html + "</div><div width='40%'></div></center></body</html>"
+	return html
+
 # route to API, accepts POST request with multi part form data
 @app.route('/api/scan', methods=['POST'])
 def upload_file():
