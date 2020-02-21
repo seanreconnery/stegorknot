@@ -1,10 +1,15 @@
 import os
-from app import app
-from flask import request, jsonify
+from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 from struct import unpack
 from wand.image import Image
 
+UPLOAD_FOLDER = os.path.abspath(os.path.dirname(__file__)) + "/img2scan"
+
+app = Flask(__name__)
+app.secret_key = "app1key4220k3Vk3y4pphft3wo85dtkhyu"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 * 1024
 # limit to JPG images because thats all PIXELKNOT handles iirc
 ALLOWED_EXTENSIONS = set(['gif', 'png', 'pdf', 'jpg', 'jpeg'])
 
