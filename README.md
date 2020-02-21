@@ -1,5 +1,5 @@
 # stegorknot
-REST API to check a JPG for indications of PixelKnot, a common mobile steganography app for Android
+REST API to check a JPG for indications of PixelKnot, a common mobile steganography app for Android, as well as embedded/appended data.
 
 
 Responses Back from API will be either an "error" message or an indicator of yes/no regarding PixelKnot.
@@ -21,3 +21,7 @@ ERRORS / JSON RESPONSE:
     {'error' : 'No file selected for uploading'}
     
  
+TO-DO:  Add in functionality to check for embedded/appended files (DONE)
+endpoint:  /api/embed
+Returns {filetype : data size} or {"Embed" : "no"}
+EX:  {"PKZip Compressed Archive" : "approx 1375 bytes"}
